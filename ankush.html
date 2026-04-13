@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankush Jha | Performance Marketing</title>
+    <style>
+        /* --- MODERN BENTO BOX THEME --- */
+        :root {
+            --bg-page: #f4f4f5; /* Very soft gray background */
+            --bg-card: #ffffff; /* Crisp white cards */
+            --text-main: #18181b; /* Near black */
+            --text-muted: #71717a; /* Medium gray */
+            --accent-primary: #2563eb; /* Trustworthy Blue */
+            --accent-growth: #16a34a; /* Vibrant Green for metrics */
+            --border-radius: 24px; /* Heavy rounding for modern look */
+        }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-top: 40px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            background-color: var(--text-main);
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s, background 0.2s;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            background-color: var(--accent-primary);
+        }
+
+        /* --- BENTO GRID LAYOUT --- */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 20px;
+            grid-auto-rows: minmax(200px, auto);
+        }
+
+        .bento-card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e4e4e7;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .bento-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Grid Sizing */
+        .card-large { grid-column: span 8; }
+        .card-medium { grid-column: span 4; }
+        .card-wide { grid-column: span 12; display: flex; flex-direction: row; align-items: center; gap: 40px;}
+
+        @media (max-width: 900px) {
+            .card-large, .card-medium, .card-wide { grid-column: span 12; }
+            .card-wide { flex-direction: column; align-items: flex-start;}
+        }
+
+        /* --- CARD CONTENTS --- */
+        .card-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-primary);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .bento-card h3 {
+            font-size: 1.5rem;
+            margin: 0 0 10px 0;
+            font-weight: 700;
+        }
+
+        .bento-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        /* --- METRICS HIGHLIGHTS --- */
+        .metric-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .metric {
+            background: #f0fdf4; /* Soft green bg */
+            padding: 15px 20px;
+            border-radius: 16px;
+            border: 1px solid #bbf7d0;
+        }
+
+        .metric strong {
+            display: block;
+            font-size: 1.8rem;
+            color: var(--accent-growth);
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .metric span {
+            font-size: 0.8rem;
+            color: #166534;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* Skills specific */
+        .skills-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-chip {
+            background: #f4f4f5;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-main);
+            border: 1px solid #e4e4e7;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header class="hero">
+            <h1>Ankush Jha</h1>
+            <p>Performance Marketing Lead. Scaling global e-commerce and B2B brands through data-driven precision across Google, Meta, and Microsoft Ads.</p>
+            <a href="resume.pdf" class="btn">Download Resume</a>
+        </header>
+
+        <div class="bento-grid">
+
+            <div class="bento-card card-large">
+                <div>
+                    <span class="card-tag">META ADS • GLOBAL APPAREL</span>
+                    <h3>Premium UK Fashion Brand</h3>
+                    <p>Overhauled full-funnel tracking and aggressively tested creatives to resolve high CAC. Systematically scaled the monthly budget by 12% while maintaining strict profitability targets.</p>
+                </div>
+                <div class="metric-group">
+                    <div class="metric">
+                        <strong>17.17x</strong>
+                        <span>Final ROAS</span>
+                    </div>
+                    <div class="metric">
+                        <strong>+213%</strong>
+                        <span>Revenue Growth</span>
+                    </div>
+                    <div class="metric">
+                        <strong>-49%</strong>
+                        <span>Cost per Conv.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bento-card card-medium">
+                <div>
+                    <span class="card-tag">GOOGLE PMAX • LEAD GEN</span>
+                    <h3>Canadian Financial Brokerage</h3>
+                    <p>Dominated a highly saturated, high-CPC market using competitor targeting and sub-$1 bidding strategies to capture massive impression share.</p>
+                </div>
+                <div class="metric-group">
+                    <div style="background: #eff6ff; border-color: #bfdbfe;" class="metric">
+                        <strong style="color: #1d4ed8;">9,085</strong>
+                        <span style="color: #1e40af;">Total Conversions</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bento-card card-medium">
+                <span class="card-tag">THE GROWTH STACK</span>
+                <h3>Technical Arsenal</h3>
+                <div class="skills-wrapper">
+                    <span class="skill-chip">Google Ads (PMax/Shopping)</span>
+                    <span class="skill-chip">Meta Ads</span>
+                    <span class="skill-chip">Microsoft (Bing) Ads</span>
+                    <span class="skill-chip">GA4 & Looker Studio</span>
+                    <span class="skill-chip">Merchant Center Setup</span>
+                    <span class="skill-chip">CRO & A/B Testing</span>
+                </div>
+            </div>
+
+            <div class="bento-card card-large">
+                <div>
+                    <span class="card-tag">GOOGLE ADS & GMC • APPAREL</span>
+                    <h3>Customized Print E-commerce</h3>
+                    <p>Executed a massive turnaround by optimizing the Google Merchant Center feed for maximum visibility and deploying segmented automated bidding (tROAS).</p>
+                </div>
+                <div class="metric-group">
+                    <div class="metric">
+                        <strong>+1,492%</strong>
+                        <span>Purchase Increase</span>
+                    </div>
+                    <div class="metric">
+                        <strong>+1,550%</strong>
+                        <span>Revenue Surge</span>
+                    </div>
+                    <div class="metric">
+                        <strong>-63%</strong>
+                        <span>Cost Efficiency</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bento-card card-wide">
+                <div style="flex: 1;">
+                    <span class="card-tag">GOOGLE SEARCH • MARINE RETAIL</span>
+                    <h3>US Marine Parts Distributor</h3>
+                    <p>Captured hyper-specific, long-tail product queries over a 7-month campaign sprint to drive massive volume without inflating acquisition costs.</p>
+                </div>
+                <div class="metric-group" style="flex: 1; justify-content: flex-end;">
+                    <div style="background: #f8fafc; border-color: #e2e8f0;" class="metric">
+                        <strong style="color: #334155;">5,610</strong>
+                        <span style="color: #475569;">Conversions Generated</span>
+                    </div>
+                    <div style="background: #f8fafc; border-color: #e2e8f0;" class="metric">
+                        <strong style="color: #334155;">$0.57</strong>
+                        <span style="color: #475569;">Average CPC</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
