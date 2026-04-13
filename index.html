@@ -123,21 +123,72 @@
         .timeline-item h3 { margin: 0 0 5px 0; font-size: 1.4rem; color: var(--text-heading); }
         .timeline-item .date { display: inline-block; padding: 4px 12px; background: var(--bg-page); border: 1px solid var(--border-color); border-radius: 50px; font-size: 0.85rem; font-weight: 700; color: var(--text-main); margin-bottom: 15px;}
 
+        /* --- MOBILE MENU BUTTON (Hidden on Desktop) --- */
+        .hamburger {
+            display: none;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            color: var(--text-heading);
+            cursor: pointer;
+            padding: 0;
+            line-height: 1;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .split-box { flex-direction: column; }
             .hero h1 { font-size: 2.5rem; }
             .slide { padding: 30px 20px; }
-            .nav-links { display: none; } /* Mobile menu needed for production */
+            
+            /* Show hamburger button */
+            .hamburger { display: block; }
+            
+            /* Style the dropdown menu */
+            .nav-inner { position: relative; } /* Keeps dropdown attached to header */
+            
+            .nav-links { 
+                display: none; /* Hidden by default */
+                flex-direction: column;
+                position: absolute;
+                top: 100%; /* Pushes it right below the header */
+                left: 0;
+                width: 100%;
+                background-color: var(--bg-card);
+                padding: 10px 0 20px 0;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+                border-top: 1px solid var(--border-color);
+            }
+
+            /* This class is added by JavaScript to show the menu */
+            .nav-links.active {
+                display: flex; 
+            }
+
+            .nav-links a { 
+                margin: 0; 
+                padding: 15px 20px; 
+                text-align: center; 
+                border-bottom: 1px solid #f1f5f9;
+            }
+
+            .nav-links a.btn-nav {
+                margin: 20px auto 0 auto;
+                width: max-content;
+                border-bottom: 2px solid var(--text-heading); /* Restores original button border */
+            }
         }
     </style>
 </head>
 <body>
 
-    <header class="nav">
+   <header class="nav">
         <div class="container nav-inner">
             <div class="nav-logo">Ankush Jha</div>
-            <div class="nav-links">
+            
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">☰</button>
+
+            <div class="nav-links" id="nav-links">
                 <a href="#expertise">Expertise</a>
                 <a href="#portfolio">Case Studies</a>
                 <a href="#experience">Experience</a>
@@ -145,7 +196,6 @@
             </div>
         </div>
     </header>
-
     <section class="container hero">
         <h1>Transforming Data Into <br><span style="color: var(--accent-growth);">Predictable Revenue.</span></h1>
         <p>I am a Performance Marketing Lead specializing in high-budget Google, Meta, and Microsoft Ads. I build, scale, and optimize full-funnel strategies that deliver massive ROAS for global e-commerce and B2B brands.</p>
@@ -400,6 +450,16 @@
         <p style="font-weight: 600;">+91 8459306178</p>
         <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 40px;">&copy; 2024 Ankush Jha. All rights reserved.</p>
     </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            // Toggles the 'active' class on and off
+            navLinks.classList.toggle('active');
+        });
+    </script>
 
 </body>
 </html>
