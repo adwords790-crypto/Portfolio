@@ -3,278 +3,299 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ankush Jha | Performance Marketing Lead</title>
+    <title>Ankush Jha | Digital Marketing Portfolio</title>
     <style>
-        /* --- HIGH-TECH SAAS THEME --- */
+        /* --- CLEAN 'PITCH DECK' THEME --- */
         :root {
-            --bg-base: #050505;
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --card-border: rgba(255, 255, 255, 0.08);
-            --text-main: #ffffff;
-            --text-muted: #a1a1aa;
-            --accent-glow: #10b981; /* Neon Growth Green */
-            --accent-blue: #3b82f6;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --text-dark: #1e293b;
+            --text-gray: #64748b;
+            --accent-primary: #ea580c; /* A professional burnt orange/coral accent */
+            --accent-secondary: #0f172a;
+            --border-color: #e2e8f0;
         }
 
         body {
             margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
-            background-color: var(--bg-base);
-            color: var(--text-main);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
             line-height: 1.6;
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-        }
-
-        /* Subtle glowing background orb */
-        .bg-glow {
-            position: fixed;
-            top: -20%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80vw;
-            height: 80vw;
-            background: radial-gradient(circle, rgba(16, 185, 129, 0.05) 0%, rgba(0,0,0,0) 70%);
-            z-index: -1;
-            pointer-events: none;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 40px 20px;
         }
 
-        /* --- NAVIGATION --- */
-        header.nav {
+        /* --- HEADER --- */
+        header {
+            text-align: center;
+            padding: 60px 0;
+            background: var(--bg-white);
+            border-bottom: 1px solid var(--border-color);
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            color: var(--accent-secondary);
+        }
+        header h2 {
+            font-size: 1.5rem;
+            color: var(--accent-primary);
+            font-weight: 500;
+            margin-top: 10px;
+        }
+        header p {
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        /* --- SECTION SLIDES --- */
+        .slide {
+            background: var(--bg-white);
+            margin: 40px 0;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .slide-header {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        .slide-header h3 {
+            font-size: 2rem;
+            color: var(--accent-secondary);
+            margin: 0;
+        }
+        .project-meta {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-            border-bottom: 1px solid var(--card-border);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            gap: 20px;
+            margin-top: 10px;
+            font-weight: 600;
+            color: var(--text-gray);
         }
-        .nav-logo { font-weight: 800; font-size: 1.2rem; letter-spacing: 1px; color: #fff;}
-        .nav-links a { margin-left: 25px; text-decoration: none; color: var(--text-muted); font-size: 0.9rem; font-weight: 500; transition: color 0.3s;}
-        .nav-links a:hover { color: #fff; }
-        .btn-nav { border: 1px solid var(--card-border); padding: 8px 18px; border-radius: 50px; color: #fff !important; background: var(--card-bg); transition: all 0.3s;}
-        .btn-nav:hover { background: #fff; color: #000 !important; border-color: #fff; }
+        .project-meta span { color: var(--accent-primary); }
 
-        /* --- HERO SECTION --- */
-        .hero { text-align: center; padding: 100px 0 80px; animation: fadeUp 1s ease-out; }
-        .hero h1 { font-size: 4rem; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 15px; line-height: 1.1; background: linear-gradient(to right, #fff, #a1a1aa); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
-        .hero p { font-size: 1.25rem; color: var(--text-muted); max-width: 650px; margin: 0 auto 40px; }
-        .btn-primary { background-color: #fff; color: #000; padding: 14px 35px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: all 0.3s; display: inline-block; box-shadow: 0 0 20px rgba(255,255,255,0.2);}
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 0 30px rgba(255,255,255,0.4); }
-
-        /* --- BENTO GRID --- */
-        .section-title { font-size: 2rem; font-weight: 800; margin: 60px 0 40px; text-align: center; letter-spacing: -0.5px;}
-        .bento-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; margin-bottom: 80px; }
-        
-        /* Glassmorphism Cards */
-        .bento-card { 
-            background: var(--card-bg); 
-            backdrop-filter: blur(12px);
-            border-radius: 24px; 
-            padding: 35px; 
-            border: 1px solid var(--card-border); 
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: space-between;
-            position: relative;
-            overflow: hidden;
+        /* --- CHALLENGES VS SOLUTIONS (MUSKAN STYLE) --- */
+        .split-box {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
         }
-        
-        .bento-card:hover { 
-            transform: translateY(-8px); 
-            border-color: rgba(16, 185, 129, 0.4);
-            box-shadow: 0 10px 40px rgba(16, 185, 129, 0.1); 
+        .box-half {
+            flex: 1;
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
         }
+        .box-half h4 { margin-top: 0; font-size: 1.1rem; color: var(--accent-secondary);}
+        .box-half ul { list-style: none; padding: 0; margin: 0; }
+        .box-half li { margin-bottom: 10px; font-size: 0.95rem; display: flex; align-items: flex-start; gap: 10px;}
+        
+        .icon-x { color: #dc2626; font-weight: bold; }
+        .icon-check { color: #16a34a; font-weight: bold; font-size: 1.1rem;}
 
-        /* Subtle inner glow on hover */
-        .bento-card::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            opacity: 0; transition: opacity 0.4s;
+        /* --- KEY IMPROVEMENTS --- */
+        .improvements { margin-bottom: 30px; }
+        .improvements h4 { font-size: 1.2rem; color: var(--accent-secondary); }
+        .improvements ul { padding-left: 20px; color: var(--text-dark); }
+        .improvements li { margin-bottom: 10px; }
+        .improvements li strong { color: var(--accent-primary); }
+
+        /* --- DATA TABLES (MUSKAN STYLE) --- */
+        .data-table-wrapper {
+            overflow-x: auto;
+            margin-bottom: 30px;
         }
-        .bento-card:hover::before { opacity: 1; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+        }
+        th {
+            background-color: var(--accent-secondary);
+            color: white;
+            font-weight: 600;
+        }
+        tr:nth-child(even) { background-color: var(--bg-light); }
+        .row-change { font-weight: bold; background-color: #f0fdf4 !important; color: #166534; }
 
-        .card-large { grid-column: span 8; }
-        .card-medium { grid-column: span 4; }
-        
-        .card-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-glow); margin-bottom: 15px; display: inline-block; padding: 4px 10px; background: rgba(16, 185, 129, 0.1); border-radius: 8px;}
-        .bento-card h3 { font-size: 1.6rem; margin: 0 0 10px 0; color: #fff;}
-        .bento-card p { color: var(--text-muted); font-size: 1rem; margin-bottom: 25px; line-height: 1.6;}
-        
-        /* Neon Metrics */
-        .metric-group { display: flex; gap: 15px; flex-wrap: wrap; }
-        .metric { background: rgba(0,0,0,0.4); padding: 15px 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); min-width: 120px;}
-        .metric strong { display: block; font-size: 2rem; color: var(--accent-glow); line-height: 1; margin-bottom: 5px; text-shadow: 0 0 20px rgba(16, 185, 129, 0.3);}
-        .metric span { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 1px;}
-
-        @media (max-width: 900px) { .card-large, .card-medium { grid-column: span 12; } }
-
-        /* --- DEEP DIVE CASE STUDIES --- */
-        .case-study-row { display: flex; flex-wrap: wrap; gap: 40px; margin-bottom: 40px; background: var(--card-bg); border-radius: 24px; border: 1px solid var(--card-border); padding: 40px; transition: border-color 0.3s;}
-        .case-study-row:hover { border-color: rgba(255,255,255,0.2); }
-        .cs-content h3 { font-size: 2rem; margin-top: 0; color: #fff;}
-        .cs-content h4 { color: #fff; margin: 25px 0 10px; font-size: 1.1rem; border-left: 3px solid var(--accent-glow); padding-left: 15px;}
-        .cs-content p { color: var(--text-muted); margin-bottom: 0; }
-        
-        /* --- TIMELINE --- */
-        .timeline { position: relative; max-width: 800px; margin: 0 auto; padding: 20px 0; border-left: 2px solid var(--card-border); margin-left: 20px;}
-        .timeline-item { padding: 0 0 40px 30px; position: relative;}
-        .timeline-item::before { content: ''; position: absolute; left: -7px; top: 5px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent-glow); box-shadow: 0 0 10px var(--accent-glow);}
-        .timeline-item h3 { margin: 0 0 5px 0; color: #fff; font-size: 1.4rem;}
-        .timeline-item span.date { font-size: 0.85rem; color: var(--accent-glow); font-weight: 600; text-transform: uppercase; display: block; margin-bottom: 10px;}
-        .timeline-item p { color: var(--text-muted); margin: 0;}
-
-        /* --- ANIMATIONS --- */
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* --- DASHBOARD SCREENSHOTS --- */
+        .screenshot-area {
+            text-align: center;
+            background: #f1f5f9;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px dashed #cbd5e1;
+        }
+        .screenshot-area img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        .animate-on-scroll { animation: fadeUp 0.8s ease-out forwards; }
-
-        /* Footer */
-        footer { text-align: center; padding: 60px 0; border-top: 1px solid var(--card-border); margin-top: 80px; color: var(--text-muted); }
+        @media (max-width: 768px) {
+            .split-box { flex-direction: column; gap: 15px; }
+            .project-meta { flex-direction: column; gap: 5px; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="bg-glow"></div>
+    <header>
+        <div class="container">
+            <h1>Ankush Jha</h1>
+            <h2>Performance Marketing Lead</h2>
+            <p>I am a passionate Performance Marketer driven by data, creativity, and results. My expertise lies in crafting performance-driven strategies that deliver measurable growth across Google Ads, Meta Ads, and Microsoft Ads.</p>
+        </div>
+    </header>
 
     <div class="container">
-        <header class="nav">
-            <div class="nav-logo">Ankush Jha</div>
-            <div class="nav-links">
-                <a href="#metrics">Top Wins</a>
-                <a href="#case-studies">Strategy</a>
-                <a href="#experience">Experience</a>
-                <a href="resume.pdf" target="_blank" class="btn-nav">Resume</a>
-            </div>
-        </header>
 
-        <section class="hero">
-            <h1>Data-Driven Performance Lead.</h1>
-            <p>I scale global e-commerce and B2B brands across Google, Meta, and Microsoft Ads by turning complex data into aggressive, profitable growth.</p>
-            <a href="#case-studies" class="btn-primary">Explore My Work</a>
-        </section>
-
-        <h2 class="section-title" id="metrics">High-Impact Metrics</h2>
-        <div class="bento-grid">
-            
-            <div class="bento-card card-large animate-on-scroll">
-                <div>
-                    <span class="card-tag">META ADS • GLOBAL FASHION</span>
-                    <h3>Premium UK Fashion Brand</h3>
-                    <p>Scaled the monthly budget systematically by 12% while skyrocketing efficiency through full-funnel tracking and aggressive A/B testing.</p>
-                </div>
-                <div class="metric-group">
-                    <div class="metric"><strong>17x</strong><span>Final ROAS</span></div>
-                    <div class="metric"><strong>+213%</strong><span>Revenue</span></div>
-                    <div class="metric"><strong>-49%</strong><span>Cost/Conv.</span></div>
+        <div class="slide">
+            <div class="slide-header">
+                <h3>Project 1: Premium UK Fashion Brand</h3>
+                <div class="project-meta">
+                    <div>Industry: <span>Fashion / E-commerce</span></div>
+                    <div>Location: <span>United Kingdom</span></div>
+                    <div>Platform: <span>Meta Ads</span></div>
                 </div>
             </div>
 
-            <div class="bento-card card-medium animate-on-scroll" style="animation-delay: 0.1s;">
-                <div>
-                    <span class="card-tag">GOOGLE PMAX • FINANCE</span>
-                    <h3>Canadian Brokerage</h3>
-                    <p>Captured high-intent leads in a saturated, high-CPC market using sub-$1 competitor targeting.</p>
+            <div class="split-box">
+                <div class="box-half">
+                    <h4>Key Challenges Before</h4>
+                    <ul>
+                        <li><span class="icon-x">❌</span> Low conversion rate and high CPA.</li>
+                        <li><span class="icon-x">❌</span> Poor ROAS stuck at 6x with limited tracking.</li>
+                        <li><span class="icon-x">❌</span> Lack of proper campaign structure and targeting.</li>
+                        <li><span class="icon-x">❌</span> No creative & ad copy testing in place.</li>
+                    </ul>
                 </div>
-                <div class="metric-group">
-                    <div class="metric">
-                        <strong>9,085</strong><span>Conversions</span>
-                    </div>
+                <div class="box-half">
+                    <h4>Actions Taken / Solutions Implemented</h4>
+                    <ul>
+                        <li><span class="icon-check">☑</span> Full-Funnel Campaigns designed.</li>
+                        <li><span class="icon-check">☑</span> Conversion tracking completely overhauled.</li>
+                        <li><span class="icon-check">☑</span> A/B testing for ad creatives and copy implemented.</li>
+                        <li><span class="icon-check">☑</span> ROAS-based bidding strategy & audience segmentation.</li>
+                    </ul>
                 </div>
             </div>
 
-            <div class="bento-card card-medium animate-on-scroll" style="animation-delay: 0.2s;">
-                <span class="card-tag">THE GROWTH STACK</span>
-                <h3>Technical Arsenal</h3>
-                <p style="color: #fff; margin-top: 10px;">
-                    <span style="display:inline-block; padding: 5px 12px; background: rgba(255,255,255,0.05); border-radius: 20px; margin: 4px; font-size: 0.85rem;">Google Ads (PMax)</span>
-                    <span style="display:inline-block; padding: 5px 12px; background: rgba(255,255,255,0.05); border-radius: 20px; margin: 4px; font-size: 0.85rem;">Meta Ads</span>
-                    <span style="display:inline-block; padding: 5px 12px; background: rgba(255,255,255,0.05); border-radius: 20px; margin: 4px; font-size: 0.85rem;">Looker Studio</span>
-                    <span style="display:inline-block; padding: 5px 12px; background: rgba(255,255,255,0.05); border-radius: 20px; margin: 4px; font-size: 0.85rem;">GMC Feeds</span>
-                </p>
+            <div class="improvements">
+                <h4>Key Improvements</h4>
+                <ul>
+                    <li><strong>Purchases Increased by 143.78%</strong> - Improved targeting and optimized the conversion funnel.</li>
+                    <li><strong>Cost per Conversion Decreased by 49.87%</strong> - Achieved through advanced targeting and CRO strategies.</li>
+                    <li><strong>ROAS Improved by 156%</strong> - Increased from 6x to 17.17x through segmented campaigns and creative testing.</li>
+                    <li><strong>Scaling</strong> - Systematically increased the monthly budget by 5% initially, then scaled to 12% per month while maintaining profitability.</li>
+                </ul>
             </div>
 
-            <div class="bento-card card-large animate-on-scroll" style="animation-delay: 0.3s;">
-                <div>
-                    <span class="card-tag">GOOGLE ADS & GMC • APPAREL</span>
-                    <h3>Customized Print E-commerce</h3>
-                    <p>Executed a massive turnaround by optimizing the Google Merchant Center feed for maximum visibility and deploying segmented automated bidding.</p>
-                </div>
-                <div class="metric-group">
-                    <div class="metric"><strong>+1,492%</strong><span>Purchases</span></div>
-                    <div class="metric"><strong>+1,550%</strong><span>Revenue</span></div>
-                </div>
+            <div class="data-table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date Range</th>
+                            <th>Purchases</th>
+                            <th>Cost / Conv.</th>
+                            <th>Cost</th>
+                            <th>Revenue</th>
+                            <th>ROAS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>After (Optimization)</td>
+                            <td>568</td>
+                            <td>£20.43</td>
+                            <td>£11,601.69</td>
+                            <td>£199,194.69</td>
+                            <td>17.17x</td>
+                        </tr>
+                        <tr>
+                            <td>Before</td>
+                            <td>233</td>
+                            <td>£40.75</td>
+                            <td>£9,494.17</td>
+                            <td>£63,619.16</td>
+                            <td>6.7x</td>
+                        </tr>
+                        <tr class="row-change">
+                            <td>Change %</td>
+                            <td>+ 143.78%</td>
+                            <td>- 49.87%</td>
+                            <td>+ 22.20%</td>
+                            <td>+ 213.10%</td>
+                            <td>+ 156.27%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="screenshot-area">
+                <p style="color: var(--text-gray); margin-bottom: 10px;"><strong>Meta Ads Dashboard Performance</strong></p>
+                <img src="https://via.placeholder.com/900x400/e2e8f0/64748b?text=Insert+Actual+Meta+Ads+Chart+Screenshot+Here" alt="Meta Ads Performance Chart">
             </div>
         </div>
 
-        <h2 class="section-title" id="case-studies">Strategy & Execution</h2>
-        
-        <div class="case-study-row">
-            <div class="cs-content">
-                <span class="card-tag">E-COMMERCE TURNAROUND</span>
-                <h3>The 15x ROAS Scaling Framework</h3>
-                <h4>The Challenge</h4>
-                <p>A premium fashion brand was struggling with high Customer Acquisition Costs (CAC) and stagnant growth, with ROAS bottlenecked at 6x.</p>
-                <h4>The Strategy</h4>
-                <p>I completely overhauled the tracking architecture (Conversions API) to feed the algorithm cleaner data. Implemented a strict A/B testing matrix for creatives and deployed a stepped scaling model—increasing budgets by 5% initially, then accelerating to 12% as profitability stabilized.</p>
-                <h4>The Result</h4>
-                <p>A 213% surge in revenue, a 143% increase in total purchases, and an Average Order Value (AOV) increase of 28%.</p>
+        <div class="slide">
+            <div class="slide-header">
+                <h3>Project 2: Canadian Financial Brokerage</h3>
+                <div class="project-meta">
+                    <div>Industry: <span>Financial Services / Lead Gen</span></div>
+                    <div>Location: <span>Canada</span></div>
+                    <div>Platform: <span>Google Ads (PMax)</span></div>
+                </div>
+            </div>
+
+            <div class="split-box">
+                <div class="box-half">
+                    <h4>Key Challenges Before</h4>
+                    <ul>
+                        <li><span class="icon-x">❌</span> High Cost-Per-Click (CPC) in a saturated market.</li>
+                        <li><span class="icon-x">❌</span> Overspending on irrelevant, low-intent traffic.</li>
+                    </ul>
+                </div>
+                <div class="box-half">
+                    <h4>Actions Taken / Solutions Implemented</h4>
+                    <ul>
+                        <li><span class="icon-check">☑</span> Implemented sub-$1 bidding strategies via PMax.</li>
+                        <li><span class="icon-check">☑</span> Utilized aggressive Competitor targeting.</li>
+                        <li><span class="icon-check">☑</span> Tracked multiple intents (Calls vs. Form Submits).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="improvements">
+                <h4>Key Improvements</h4>
+                <ul>
+                    <li><strong>Massive Conversion Volume</strong> - Delivered 9,085 total conversions over 12 months.</li>
+                    <li><strong>Market Dominance</strong> - Captured over 2 Million impressions while maintaining a highly efficient 4.5%+ interaction rate.</li>
+                </ul>
+            </div>
+
+            <div class="screenshot-area">
+                <p style="color: var(--text-gray); margin-bottom: 10px;"><strong>Google Ads Dashboard Performance</strong></p>
+                <img src="https://via.placeholder.com/900x400/e2e8f0/64748b?text=Insert+Actual+Google+Ads+Dashboard+Screenshot+Here" alt="Google Ads Performance Chart">
             </div>
         </div>
 
-        <div class="case-study-row">
-            <div class="cs-content">
-                <span class="card-tag">HIGH-INTENT LEAD GEN</span>
-                <h3>Dominating High-CPC Financial Markets</h3>
-                <h4>The Challenge</h4>
-                <p>Managing a $90,800+ annual budget to capture qualified financial leads in Canada without overpaying for clicks.</p>
-                <h4>The Strategy</h4>
-                <p>Pivoted heavily into Performance Max (PMax) utilizing a highly specific "Competitor" audience signal. Set up granular conversion tracking for different user intents (Calculate vs. Form Submit) to train the algorithm on high-value actions.</p>
-                <h4>The Result</h4>
-                <p>Delivered over 9,085 highly qualified conversions while maintaining a steady 4.5% interaction rate across millions of impressions.</p>
-            </div>
-        </div>
-
-        <h2 class="section-title" id="experience">Professional Timeline</h2>
-        <div class="timeline">
-            
-            <div class="timeline-item">
-                <h3>Assistant Team Leader - Performance Marketing</h3>
-                <span class="date">SunTec India | Dec 2025 – Mar 2026</span>
-                <p>Lead a performance marketing team executing full-funnel strategies across Amazon, Meta, and Google Ads. Designed Looker Studio dashboards for C-suite transparency and mentored junior media buyers.</p>
-            </div>
-
-            <div class="timeline-item">
-                <h3>Digital Marketing Specialist</h3>
-                <span class="date">WNS Global (Google Ads) | Aug 2024 – Dec 2025</span>
-                <p>Managed 50+ global Google Ads accounts across SaaS and e-commerce. Improved client ROAS by 30%+ via keyword expansion and smart bidding, achieving a 95% client satisfaction rate.</p>
-            </div>
-
-            <div class="timeline-item">
-                <h3>Associate - Google Ads</h3>
-                <span class="date">Wipro Technologies | Sep 2023 – Jun 2024</span>
-                <p>Consulted global advertisers on campaign health and optimization frameworks. Partnered with technical teams to troubleshoot tracking issues.</p>
-            </div>
-
-        </div>
-
-        <footer>
-            <p>Ready to scale your next project?</p>
-            <p><a href="mailto:ankushofficial21120@gmail.com" style="color: #fff; font-weight: 600;">ankushofficial21120@gmail.com</a> | +91 8459306178</p>
-            <p style="font-size: 0.8rem; margin-top: 20px;">&copy; 2024 Ankush Jha. All rights reserved.</p>
-        </footer>
     </div>
 
 </body>
